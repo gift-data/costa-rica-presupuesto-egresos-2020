@@ -1,0 +1,1154 @@
+{
+  "@context": "http://schemas.frictionlessdata.io/fiscal-data-package.jsonld",
+  "author": "PresupuestoAbierto CostaRica",
+  "bytes": 29340608,
+  "count_of_rows": 53585,
+  "countryCode": "CR",
+  "description": "Presupuesto egresos 2020 (enero - febrero).",
+  "fiscalPeriod": {
+    "end": "2020-02-29",
+    "start": "2020-01-01"
+  },
+  "hash": "1d1d9797acfb372826acbc2093ebdbc0",
+  "model": {
+    "dimensions": {
+      "administrative-classification": {
+        "attributes": {
+          "programa_codigo": {
+            "parent": "titulo_codigo",
+            "source": "programa_codigo",
+            "title": "Programa_Codigo"
+          },
+          "programa_descripcion": {
+            "labelfor": "programa_codigo",
+            "source": "programa_descripcion",
+            "title": "Programa_Descripcion"
+          },
+          "subprograma_codigo": {
+            "parent": "programa_codigo",
+            "source": "subprograma_codigo",
+            "title": "Subprograma_Codigo"
+          },
+          "subprograma_descripcion": {
+            "labelfor": "subprograma_codigo",
+            "source": "subprograma_descripcion",
+            "title": "Subprograma_Descripcion"
+          },
+          "titulo_codigo": {
+            "source": "titulo_codigo",
+            "title": "Titulo_Codigo"
+          },
+          "titulo_descripcion": {
+            "labelfor": "titulo_codigo",
+            "source": "titulo_descripcion",
+            "title": "Titulo_Descripcion"
+          }
+        },
+        "classificationType": "administrative",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "titulo_codigo",
+          "programa_codigo",
+          "subprograma_codigo"
+        ]
+      },
+      "date": {
+        "attributes": {
+          "ejercicio": {
+            "source": "ejercicio",
+            "title": "Ejercicio"
+          }
+        },
+        "dimensionType": "datetime",
+        "primaryKey": [
+          "ejercicio"
+        ]
+      },
+      "economic-classification": {
+        "attributes": {
+          "ce_grupo_codigo": {
+            "parent": "ce_partida_codigo",
+            "source": "ce_grupo_codigo",
+            "title": "CE_Grupo_Codigo"
+          },
+          "ce_grupo_descripcion": {
+            "labelfor": "ce_grupo_codigo",
+            "source": "ce_grupo_descripcion",
+            "title": "CE_Grupo_Descripcion"
+          },
+          "ce_partida_codigo": {
+            "source": "ce_partida_codigo",
+            "title": "CE_Partida_Codigo"
+          },
+          "ce_partida_descripcion": {
+            "labelfor": "ce_partida_codigo",
+            "source": "ce_partida_descripcion",
+            "title": "CE_Partida_Descripcion"
+          },
+          "ce_renglon_codigo": {
+            "parent": "ce_subpartida_codigo",
+            "source": "ce_renglon_codigo",
+            "title": "CE_Renglon_Codigo"
+          },
+          "ce_renglon_descripcion": {
+            "labelfor": "ce_renglon_codigo",
+            "source": "ce_renglon_descripcion",
+            "title": "CE_Renglon_Descripcion"
+          },
+          "ce_subpartida_codigo": {
+            "parent": "ce_grupo_codigo",
+            "source": "ce_subpartida_codigo",
+            "title": "CE_Subpartida_Codigo"
+          },
+          "ce_subpartida_descripcion": {
+            "labelfor": "ce_subpartida_codigo",
+            "source": "ce_subpartida_descripcion",
+            "title": "CE_Subpartida_Descripcion"
+          }
+        },
+        "classificationType": "economic",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "ce_partida_codigo",
+          "ce_grupo_codigo",
+          "ce_subpartida_codigo",
+          "ce_renglon_codigo"
+        ]
+      },
+      "fin-source": {
+        "attributes": {
+          "ff_codigo": {
+            "source": "ff_codigo",
+            "title": "FF_CODIGO"
+          },
+          "ff_descripcion": {
+            "labelfor": "ff_codigo",
+            "source": "ff_descripcion",
+            "title": "FF_Descripcion"
+          }
+        },
+        "dimensionType": "other",
+        "primaryKey": [
+          "ff_codigo"
+        ]
+      },
+      "functional-classification": {
+        "attributes": {
+          "cf_clase_codigo": {
+            "source": "cf_clase_codigo",
+            "title": "CF_Clase_Codigo"
+          },
+          "cf_clase_descripcion": {
+            "labelfor": "cf_clase_codigo",
+            "source": "cf_clase_descripcion",
+            "title": "CF_Clase_Descripcion"
+          },
+          "cf_grupo_codigo": {
+            "parent": "cf_subclase_codigo",
+            "source": "cf_grupo_codigo",
+            "title": "CF_Grupo_Codigo"
+          },
+          "cf_grupo_descripcion": {
+            "labelfor": "cf_grupo_codigo",
+            "source": "cf_grupo_descripcion",
+            "title": "CF_Grupo_Descripcion"
+          },
+          "cf_subclase_codigo": {
+            "parent": "cf_clase_codigo",
+            "source": "cf_subclase_codigo",
+            "title": "CF_Subclase_Codigo"
+          },
+          "cf_subclase_descripcion": {
+            "labelfor": "cf_subclase_codigo",
+            "source": "cf_subclase_descripcion",
+            "title": "CF_Subclase_Descripcion"
+          },
+          "cf_subgrupo_codigo": {
+            "parent": "cf_grupo_codigo",
+            "source": "cf_subgrupo_codigo",
+            "title": "CF_Subgrupo_Codigo"
+          },
+          "cf_subgrupo_descripcion": {
+            "labelfor": "cf_subgrupo_codigo",
+            "source": "cf_subgrupo_descripcion",
+            "title": "CF_Subgrupo_Descripcion"
+          }
+        },
+        "classificationType": "functional",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "cf_clase_codigo",
+          "cf_subclase_codigo",
+          "cf_grupo_codigo",
+          "cf_subgrupo_codigo"
+        ]
+      },
+      "unknown": {
+        "attributes": {
+          "cog_grupo_codigo": {
+            "source": "cog_grupo_codigo",
+            "title": "COG_Grupo_Codigo"
+          },
+          "cog_grupo_descripcion": {
+            "labelfor": "cog_grupo_codigo",
+            "source": "cog_grupo_descripcion",
+            "title": "COG_Grupo_Descripcion"
+          },
+          "cog_partida_codigo": {
+            "source": "cog_partida_codigo",
+            "title": "COG_Partida_Codigo"
+          },
+          "cog_partida_descripcion": {
+            "labelfor": "cog_partida_codigo",
+            "source": "cog_partida_descripcion",
+            "title": "COG_Partida_Descripcion"
+          },
+          "cog_subpartida_codigo": {
+            "source": "cog_subpartida_codigo",
+            "title": "COG_Subpartida_Codigo"
+          },
+          "cog_subpartida_descripcion": {
+            "labelfor": "cog_subpartida_codigo",
+            "source": "cog_subpartida_descripcion",
+            "title": "COG_Subpartida_Descripcion"
+          },
+          "ff_clase1": {
+            "source": "ff_clase1",
+            "title": "FF_Clase1"
+          },
+          "ff_clase2": {
+            "source": "ff_clase2",
+            "title": "FF_Clase2"
+          },
+          "mes": {
+            "source": "mes",
+            "title": "Mes"
+          }
+        },
+        "dimensionType": "other",
+        "primaryKey": [
+          "cog_partida_codigo",
+          "cog_grupo_codigo",
+          "cog_subpartida_codigo"
+        ]
+      }
+    },
+    "measures": {
+      "co_monto": {
+        "source": "co_monto",
+        "title": "CO_Monto"
+      },
+      "de_monto": {
+        "source": "de_monto",
+        "title": "DE_Monto"
+      },
+      "li_monto": {
+        "source": "li_monto",
+        "title": "LI_Monto"
+      },
+      "pa_monto": {
+        "source": "pa_monto",
+        "title": "PA_Monto"
+      },
+      "pi_monto": {
+        "source": "pi_monto",
+        "title": "PI_Monto"
+      },
+      "pp_monto": {
+        "source": "pp_monto",
+        "title": "PP_Monto"
+      },
+      "rm_monto": {
+        "source": "rm_monto",
+        "title": "RM_Monto"
+      },
+      "so_monto": {
+        "source": "so_monto",
+        "title": "SO_Monto"
+      }
+    }
+  },
+  "name": "e2020_cr_ene_feb",
+  "owner": "2e6c7fb02a09883c5556f341e814d3bf",
+  "profile": "data-package",
+  "profiles": {
+    "fiscal": "*",
+    "tabular": "*"
+  },
+  "promise": {},
+  "regionCode": "na",
+  "resources": [
+    {
+      "bytes": 22005447,
+      "count_of_rows": 40188,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpjmtba02v/final/data/egreso2020ene_feb2.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "6fc93224fe41b79066998138031675c2",
+      "mediatype": "text/csv",
+      "name": "egreso2020ene_feb2",
+      "path": "data/egreso2020ene_feb2.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "ejercicio",
+            "slug": "ejercicio",
+            "title": "Ejercicio",
+            "type": "integer"
+          },
+          {
+            "columnType": "unknown:string",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "mes",
+            "slug": "mes",
+            "title": "Mes",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "titulo_codigo",
+            "slug": "titulo_codigo",
+            "title": "Titulo_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "titulo_descripcion",
+            "slug": "titulo_descripcion",
+            "title": "Titulo_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "programa_codigo",
+            "slug": "programa_codigo",
+            "title": "Programa_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "programa_descripcion",
+            "slug": "programa_descripcion",
+            "title": "Programa_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "subprograma_codigo",
+            "slug": "subprograma_codigo",
+            "title": "Subprograma_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "subprograma_descripcion",
+            "slug": "subprograma_descripcion",
+            "title": "Subprograma_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string-1:code",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "cog_partida_codigo",
+            "slug": "cog_partida_codigo",
+            "title": "COG_Partida_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string-1:label",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "cog_partida_descripcion",
+            "slug": "cog_partida_descripcion",
+            "title": "COG_Partida_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string-2:code",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "cog_grupo_codigo",
+            "slug": "cog_grupo_codigo",
+            "title": "COG_Grupo_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string-2:label",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "cog_grupo_descripcion",
+            "slug": "cog_grupo_descripcion",
+            "title": "COG_Grupo_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string-3:code",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "cog_subpartida_codigo",
+            "slug": "cog_subpartida_codigo",
+            "title": "COG_Subpartida_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string-3:label",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "cog_subpartida_descripcion",
+            "slug": "cog_subpartida_descripcion",
+            "title": "COG_Subpartida_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level1:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_partida_codigo",
+            "slug": "ce_partida_codigo",
+            "title": "CE_Partida_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level1:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_partida_descripcion",
+            "slug": "ce_partida_descripcion",
+            "title": "CE_Partida_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level2:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_grupo_codigo",
+            "slug": "ce_grupo_codigo",
+            "title": "CE_Grupo_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level2:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_grupo_descripcion",
+            "slug": "ce_grupo_descripcion",
+            "title": "CE_Grupo_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level3:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_subpartida_codigo",
+            "slug": "ce_subpartida_codigo",
+            "title": "CE_Subpartida_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level3:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_subpartida_descripcion",
+            "slug": "ce_subpartida_descripcion",
+            "title": "CE_Subpartida_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level4:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_renglon_codigo",
+            "slug": "ce_renglon_codigo",
+            "title": "CE_Renglon_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level4:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_renglon_descripcion",
+            "slug": "ce_renglon_descripcion",
+            "title": "CE_Renglon_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level1:code",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_clase_codigo",
+            "slug": "cf_clase_codigo",
+            "title": "CF_Clase_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level1:label",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_clase_descripcion",
+            "slug": "cf_clase_descripcion",
+            "title": "CF_Clase_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level2:code",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_subclase_codigo",
+            "slug": "cf_subclase_codigo",
+            "title": "CF_Subclase_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level2:label",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_subclase_descripcion",
+            "slug": "cf_subclase_descripcion",
+            "title": "CF_Subclase_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level3:code",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_grupo_codigo",
+            "slug": "cf_grupo_codigo",
+            "title": "CF_Grupo_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level3:label",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_grupo_descripcion",
+            "slug": "cf_grupo_descripcion",
+            "title": "CF_Grupo_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level4:code",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_subgrupo_codigo",
+            "slug": "cf_subgrupo_codigo",
+            "title": "CF_Subgrupo_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level4:label",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_subgrupo_descripcion",
+            "slug": "cf_subgrupo_descripcion",
+            "title": "CF_Subgrupo_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "fin-source:generic:code",
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "ff_codigo",
+            "slug": "ff_codigo",
+            "title": "FF_CODIGO",
+            "type": "string"
+          },
+          {
+            "columnType": "fin-source:generic:label",
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "ff_descripcion",
+            "slug": "ff_descripcion",
+            "title": "FF_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "ff_clase1",
+            "slug": "ff_clase1",
+            "title": "FF_Clase1",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "ff_clase2",
+            "slug": "ff_clase2",
+            "title": "FF_Clase2",
+            "type": "string"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "pi_monto",
+            "slug": "pi_monto",
+            "title": "PI_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "pp_monto",
+            "slug": "pp_monto",
+            "title": "PP_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "li_monto",
+            "slug": "li_monto",
+            "title": "LI_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "so_monto",
+            "slug": "so_monto",
+            "title": "SO_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "co_monto",
+            "slug": "co_monto",
+            "title": "CO_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "rm_monto",
+            "slug": "rm_monto",
+            "title": "RM_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "de_monto",
+            "slug": "de_monto",
+            "title": "DE_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "pa_monto",
+            "slug": "pa_monto",
+            "title": "PA_Monto",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "ejercicio",
+          "titulo_codigo",
+          "programa_codigo",
+          "subprograma_codigo",
+          "cog_partida_codigo",
+          "cog_grupo_codigo",
+          "cog_subpartida_codigo",
+          "ce_partida_codigo",
+          "ce_grupo_codigo",
+          "ce_subpartida_codigo",
+          "ce_renglon_codigo",
+          "cf_clase_codigo",
+          "cf_subclase_codigo",
+          "cf_grupo_codigo",
+          "cf_subgrupo_codigo",
+          "ff_codigo"
+        ]
+      }
+    },
+    {
+      "bytes": 14670298,
+      "count_of_rows": 26792,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpjmtba02v/final/data/egreso2020ene_feb2__2020.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "6fc93224fe41b79066998138031675c2",
+      "mediatype": "text/csv",
+      "name": "egreso2020ene_feb2__2020",
+      "path": "data/egreso2020ene_feb2__2020.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "ejercicio",
+            "slug": "ejercicio",
+            "title": "Ejercicio",
+            "type": "integer"
+          },
+          {
+            "columnType": "unknown:string",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "mes",
+            "slug": "mes",
+            "title": "Mes",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "titulo_codigo",
+            "slug": "titulo_codigo",
+            "title": "Titulo_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "titulo_descripcion",
+            "slug": "titulo_descripcion",
+            "title": "Titulo_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "programa_codigo",
+            "slug": "programa_codigo",
+            "title": "Programa_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "programa_descripcion",
+            "slug": "programa_descripcion",
+            "title": "Programa_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "subprograma_codigo",
+            "slug": "subprograma_codigo",
+            "title": "Subprograma_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level3:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "subprograma_descripcion",
+            "slug": "subprograma_descripcion",
+            "title": "Subprograma_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string-1:code",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "cog_partida_codigo",
+            "slug": "cog_partida_codigo",
+            "title": "COG_Partida_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string-1:label",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "cog_partida_descripcion",
+            "slug": "cog_partida_descripcion",
+            "title": "COG_Partida_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string-2:code",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "cog_grupo_codigo",
+            "slug": "cog_grupo_codigo",
+            "title": "COG_Grupo_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string-2:label",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "cog_grupo_descripcion",
+            "slug": "cog_grupo_descripcion",
+            "title": "COG_Grupo_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string-3:code",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "cog_subpartida_codigo",
+            "slug": "cog_subpartida_codigo",
+            "title": "COG_Subpartida_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string-3:label",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "cog_subpartida_descripcion",
+            "slug": "cog_subpartida_descripcion",
+            "title": "COG_Subpartida_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level1:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_partida_codigo",
+            "slug": "ce_partida_codigo",
+            "title": "CE_Partida_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level1:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_partida_descripcion",
+            "slug": "ce_partida_descripcion",
+            "title": "CE_Partida_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level2:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_grupo_codigo",
+            "slug": "ce_grupo_codigo",
+            "title": "CE_Grupo_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level2:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_grupo_descripcion",
+            "slug": "ce_grupo_descripcion",
+            "title": "CE_Grupo_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level3:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_subpartida_codigo",
+            "slug": "ce_subpartida_codigo",
+            "title": "CE_Subpartida_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level3:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_subpartida_descripcion",
+            "slug": "ce_subpartida_descripcion",
+            "title": "CE_Subpartida_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level4:code",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_renglon_codigo",
+            "slug": "ce_renglon_codigo",
+            "title": "CE_Renglon_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "economic-classification:gfsm:level4:label",
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ce_renglon_descripcion",
+            "slug": "ce_renglon_descripcion",
+            "title": "CE_Renglon_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level1:code",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_clase_codigo",
+            "slug": "cf_clase_codigo",
+            "title": "CF_Clase_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level1:label",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_clase_descripcion",
+            "slug": "cf_clase_descripcion",
+            "title": "CF_Clase_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level2:code",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_subclase_codigo",
+            "slug": "cf_subclase_codigo",
+            "title": "CF_Subclase_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level2:label",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_subclase_descripcion",
+            "slug": "cf_subclase_descripcion",
+            "title": "CF_Subclase_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level3:code",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_grupo_codigo",
+            "slug": "cf_grupo_codigo",
+            "title": "CF_Grupo_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level3:label",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_grupo_descripcion",
+            "slug": "cf_grupo_descripcion",
+            "title": "CF_Grupo_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level4:code",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_subgrupo_codigo",
+            "slug": "cf_subgrupo_codigo",
+            "title": "CF_Subgrupo_Codigo",
+            "type": "string"
+          },
+          {
+            "columnType": "functional-classification:generic:level4:label",
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "cf_subgrupo_descripcion",
+            "slug": "cf_subgrupo_descripcion",
+            "title": "CF_Subgrupo_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "fin-source:generic:code",
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "ff_codigo",
+            "slug": "ff_codigo",
+            "title": "FF_CODIGO",
+            "type": "string"
+          },
+          {
+            "columnType": "fin-source:generic:label",
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "ff_descripcion",
+            "slug": "ff_descripcion",
+            "title": "FF_Descripcion",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "ff_clase1",
+            "slug": "ff_clase1",
+            "title": "FF_Clase1",
+            "type": "string"
+          },
+          {
+            "columnType": "unknown:string",
+            "conceptType": "unknown",
+            "format": "default",
+            "name": "ff_clase2",
+            "slug": "ff_clase2",
+            "title": "FF_Clase2",
+            "type": "string"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "pi_monto",
+            "slug": "pi_monto",
+            "title": "PI_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "pp_monto",
+            "slug": "pp_monto",
+            "title": "PP_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "li_monto",
+            "slug": "li_monto",
+            "title": "LI_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "so_monto",
+            "slug": "so_monto",
+            "title": "SO_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "co_monto",
+            "slug": "co_monto",
+            "title": "CO_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "rm_monto",
+            "slug": "rm_monto",
+            "title": "RM_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "de_monto",
+            "slug": "de_monto",
+            "title": "DE_Monto",
+            "type": "number"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "pa_monto",
+            "slug": "pa_monto",
+            "title": "PA_Monto",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "ejercicio",
+          "titulo_codigo",
+          "programa_codigo",
+          "subprograma_codigo",
+          "cog_partida_codigo",
+          "cog_grupo_codigo",
+          "cog_subpartida_codigo",
+          "ce_partida_codigo",
+          "ce_grupo_codigo",
+          "ce_subpartida_codigo",
+          "ce_renglon_codigo",
+          "cf_clase_codigo",
+          "cf_subclase_codigo",
+          "cf_grupo_codigo",
+          "cf_subgrupo_codigo",
+          "ff_codigo"
+        ]
+      }
+    }
+  ],
+  "revision": 0,
+  "title": "Presupuesto de Egresos 2020 Costa Rica"
+}
